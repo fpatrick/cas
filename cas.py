@@ -39,7 +39,8 @@ def make_folder():
 
 # Make file and add the user commands on provided folder
 def make_file(user_folder, user_command):
-    script_name = input(">>> What will be the script name?: ")
+    print(">>> What will be the script name?")
+    script_name = input()
     screen_command = "screen -dmS section_created_by_script  bash -c " + "'" + user_command + "'"
     try:
         f_path = user_folder + '/' + script_name + '.py'
@@ -47,7 +48,7 @@ def make_file(user_folder, user_command):
             f.write('import subprocess\n')
             f.write('subprocess.run("' + screen_command + '", shell=True, capture_output=True, text=True)')
 
-        print(f"\n>>> Script created on {f_path}\n")
+        print(f"\n*************** Script created on {f_path} ***************\n")
         return f_path
     except:
         print(">>> The script couldn't be created")
