@@ -5,9 +5,9 @@ import subprocess
 def start():
     print()
     print("***********************************************************************")
-    print("*              Welcome to CaS - Command and Script v0.8               *")
+    print("*              Welcome to CaS - Command and Script v0.8.2             *")
     print("* Dependency: Run with sudo. Install screen (sudo apt install screen) *")
-    print("* https://github.com/fpatrick/cas                                     *")
+    print("* by https://github.com/fpatrick/cas                          and dxT *")
     print("***********************************************************************")
     print()
     print(">>> Choose an option: | 1 - Run commands in background | 2 - Create script to run on Cron | 0 - Exit ")
@@ -42,11 +42,18 @@ def make_file(user_folder, user_command):
     print(">>> What will be the script name?")
     script_name = input()
     screen_command = "screen -dmS section_created_by_script  bash -c " + "'" + user_command + "'"
+    create_lock = "touch " + user_folder + "/" + script_name + ".lock"
+    remove_lock = "rm -f " + user_folder + "/" + script_name + ".lock"
+    lock = user_folder + "/" + script_name + ".lock"
     try:
         f_path = user_folder + '/' + script_name + '.py'
         with open(f_path, 'w') as f:
             f.write('import subprocess\n')
-            f.write('subprocess.run("' + screen_command + '", shell=True, capture_output=True, text=True)')
+            f.write('import os.path\n')
+            f.write('if os.path.isfile("' + lock + '"):\n')
+            f.write('    print("This command is already running")\n')
+            f.write('else:\n')
+            f.write('    subprocess.run(["' + create_lock + '", "' + screen_command + '", "' + remove_lock + '"], shell=True, capture_output=True, text=True)\n')
 
         print(f"\n*************** Script created on {f_path} ***************\n")
         return f_path
@@ -63,7 +70,7 @@ def close_program():
     if choice == "y":
         exit()
     else:
-        start()
+        return start()
 
 
 # If choice is just to run a command
@@ -77,7 +84,7 @@ if menu == 1:
     print(">>> Your screen section may remain open when command finish. (screen -list  and then  screen kill number)")
     print()
     print(result.stdout)
-    close_program()
+    menu = close_program()
 
 # If choice is to create a script
 elif menu == 2:
