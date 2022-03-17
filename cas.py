@@ -74,7 +74,7 @@ if menu == 1:
     screenCommand = "screen -dmS section_created_by_script  bash -c " + "'" + userCommand + "'"
     subprocess.run(screenCommand, shell=True, capture_output=True, text=True)
     result = subprocess.run("screen -ls", shell=True, capture_output=True, text=True)
-    print(">>> Your screen section will remain open when command finish. (screen -list  and then  screen kill number)")
+    print(">>> Your screen section may remain open when command finish. (screen -list  and then  screen kill number)")
     print()
     print(result.stdout)
     close_program()

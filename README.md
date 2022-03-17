@@ -1,7 +1,10 @@
 # CaS - Command and Script
 
+How to use
 
-
+    Navigate on terminal to where you download cas.py  (cd /folder)
+    Enter on terminal: sudo python3 cas.py
+    Follow the instructions on terminal
 
 ## Features
     - Run regular linux terminal commands on background.
