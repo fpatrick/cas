@@ -5,9 +5,9 @@ import subprocess
 def start():
     print()
     print("***********************************************************************")
-    print("*                Welcome to Command and Script v0.8                   *")
+    print("*              Welcome to CaS - Command and Script v0.8               *")
     print("* Dependency: Run with sudo. Install screen (sudo apt install screen) *")
-    print("* https://github.com/fpatrick                                         *")
+    print("* https://github.com/fpatrick/cas                                     *")
     print("***********************************************************************")
     print()
     print(">>> Choose an option: | 1 - Run commands in background | 2 - Create script to run on Cron | 0 - Exit ")
