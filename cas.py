@@ -41,8 +41,8 @@ def make_folder():
 def make_file(user_folder, user_command):
     print(">>> What will be the script name?")
     script_name = input()
-    create_lock = "touch " + user_folder + "/" + script_name + ".lock &&"
-    remove_lock = "&& rm -f " + user_folder + "/" + script_name + ".lock"
+    create_lock = "touch " + user_folder + "/" + script_name + ".lock && "
+    remove_lock = " && rm -f " + user_folder + "/" + script_name + ".lock"
     screen_command = "screen -dmS section_created_by_script  bash -c " + "'" + create_lock + user_command + remove_lock + "'"
 
     lock = user_folder + "/" + script_name + ".lock"
