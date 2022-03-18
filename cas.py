@@ -5,7 +5,7 @@ import subprocess
 def start():
     print()
     print("***********************************************************************")
-    print("*              Welcome to CaS - Command and Script v0.8.2             *")
+    print("*              Welcome to CaS - Command and Script v0.8.3             *")
     print("* Dependency: Run with sudo. Install screen (sudo apt install screen) *")
     print("* by https://github.com/fpatrick/cas                          and dxT *")
     print("***********************************************************************")
