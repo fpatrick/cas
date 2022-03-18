@@ -5,7 +5,7 @@ import subprocess
 def start():
     print()
     print("***********************************************************************")
-    print("*              Welcome to CaS - Command and Script v0.8.4             *")
+    print("*              Welcome to CaS - Command and Script v0.8.5             *")
     print("* Dependency: Run with sudo. Install screen (sudo apt install screen) *")
     print("* by https://github.com/fpatrick/cas                          and dxT *")
     print("***********************************************************************")
@@ -76,13 +76,13 @@ def close_program():
 
 # If choice is just to run a command
 if menu == 1:
-    print(">>> * Info: you can install screen with sudo apt install screen *")
-
-    userCommand = input(">>> What command would you like to run?: ")
+    print("\n>>> * Info: you can install screen with sudo apt install screen *\n")
+    print(">>> What command would you like to run?: ")
+    userCommand = input()
     screenCommand = "screen -dmS section_created_by_script  bash -c " + "'" + userCommand + "'"
     subprocess.run(screenCommand, shell=True, capture_output=True, text=True)
     result = subprocess.run("screen -ls", shell=True, capture_output=True, text=True)
-    print(">>> Your screen section may remain open when command finish. (screen -list  and then  screen kill number)")
+    print(">>> * Info: Your screen section may remain open when command finish. (screen -list  and then  screen kill <number>) *")
     print()
     print(result.stdout)
     menu = close_program()
