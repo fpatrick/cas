@@ -2,7 +2,7 @@
 
 Tested on: Debian/Ubuntu based dists.
 
-How to use
+## How to use
 
     1. Navigate on terminal to where you download cas.py  (cd /folder)
     2. Enter on terminal: sudo python3 cas.py
