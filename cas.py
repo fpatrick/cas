@@ -51,9 +51,9 @@ def make_file(user_folder, user_command):
             f.write('import subprocess\n')
             f.write('import os.path\n')
             f.write('if os.path.isfile("' + lock + '"):\n')
-            f.write('    print("This command is already running")\n')
+            f.write('    print("Lock found. The command is still running.")\n')
             f.write('else:\n')
-            f.write('    subprocess.run(["' + create_lock + '", "' + screen_command + '", "' + remove_lock + '"], shell=True, capture_output=True, text=True)\n')
+            f.write('    subprocess.run("' + create_lock + '" && "' + screen_command + '" && "' + remove_lock + '", shell=True, capture_output=True, text=True)\n')
 
         print(f"\n*************** Script created on {f_path} ***************\n")
         return f_path
