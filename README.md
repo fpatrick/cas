@@ -13,10 +13,9 @@ Tested on: Debian/Ubuntu based dists.
     - Create scripts with terminal commands to run using cron
         - Scripts created use a .lock file to prevent run commands alredy running 
 
-### Use Examples:
-    Command rclone to copy your cloud drive to 
-    local without occupying terminal
-    Make a script with terminal commands to easily add to cron
+### Why use it?:
+    - Command rclone to copy your cloud drive to a local folder without occupying terminal
+    - Make a script with terminal commands to easily add to cron
     
 
 ## Bugs
