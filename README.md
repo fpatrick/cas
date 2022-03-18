@@ -19,4 +19,4 @@ Tested on: Debian/Ubuntu based dists.
     
 
 ## Bugs
-    You need to recreate the script if it is needed to move it to another folder.
+    You need to recreate the script if you need to move it to another folder. (due to path of .lock file)
