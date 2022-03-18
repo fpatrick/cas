@@ -5,7 +5,7 @@ import subprocess
 def start():
     print()
     print("***********************************************************************")
-    print("*              Welcome to CaS - Command and Script v0.8.3             *")
+    print("*              Welcome to CaS - Command and Script v0.8.4             *")
     print("* Dependency: Run with sudo. Install screen (sudo apt install screen) *")
     print("* by https://github.com/fpatrick/cas                          and dxT *")
     print("***********************************************************************")
@@ -53,7 +53,7 @@ def make_file(user_folder, user_command):
             f.write('if os.path.isfile("' + lock + '"):\n')
             f.write('    print("Lock found. The command is still running.")\n')
             f.write('else:\n')
-            f.write('    subprocess.run("' + create_lock + '" && "' + screen_command + '" && "' + remove_lock + '", shell=True, capture_output=True, text=True)\n')
+            f.write('    subprocess.run("' + create_lock + ' && ' + screen_command + ' && ' + remove_lock + '", shell=True, capture_output=True, text=True)\n')
 
         print(f"\n*************** Script created on {f_path} ***************\n")
         return f_path
