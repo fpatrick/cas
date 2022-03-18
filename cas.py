@@ -6,7 +6,7 @@ def start():
     menu_choice = 99
     print()
     print("***********************************************************************")
-    print("*              Welcome to CaS - Command and Script v0.8.5             *")
+    print("*              Welcome to CaS - Command and Script v0.8.6             *")
     print("* Dependency: Run with sudo. Install screen (sudo apt install screen) *")
     print("* by https://github.com/fpatrick/cas                          and dxT *")
     print("***********************************************************************")
